@@ -1,0 +1,375 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+:root {
+  --bottom-nav-space: 120px;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #3b3b3b, #050505 70%);
+  color: #fff;
+  padding-bottom: var(--bottom-nav-space);
+  overflow-y: auto;
+}
+
+/* BRAND */
+.brand {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand img {
+  width: 56px;
+  border-radius: 50%;
+}
+
+.brand h1 {
+  font-size: 24px;
+}
+
+.brand span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+  padding-bottom: var(--bottom-nav-space);
+}
+
+/* PANEL */
+.panel {
+  width: 92%;
+  max-width: 420px;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(18px);
+  border-radius: 26px;
+  padding: 32px 26px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+}
+
+/* HEADER */
+.panel-head {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.panel-icon {
+  width: 66px;
+  height: 66px;
+  margin: auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#ff9800,#ffc107);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(255,180,0,0.8);
+}
+
+.panel-icon i {
+  font-size: 26px;
+  color: #000;
+}
+
+.panel-head h2 {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.panel-head p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* FORM */
+.form label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 16px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg,#00e676,#00c853);
+  cursor: pointer;
+  /* box-shadow: 0 12px 30px rgba(0,200,83,0.7); */
+}
+
+/* DIVIDER */
+.divider {
+  height: 1px;
+  margin: 26px 0;
+  background: linear-gradient(90deg,transparent,#777,transparent);
+}
+
+/* LIST */
+.list h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.driver {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.12);
+  padding: 12px 16px;
+  border-radius: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 420px;
+  background: rgba(30,30,30,0.95);
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+}
+
+.bottom-nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-nav a.active {
+  color: #00ff9c;
+}
+
+
+/* ===============================
+   SMALL DEVICES (max 360px)
+   =============================== */
+@media (max-width: 360px) {
+
+  .brand {
+    top: 24px;
+    gap: 10px;
+  }
+
+  .brand img {
+    width: 48px;
+  }
+
+  .brand h1 {
+    font-size: 20px;
+  }
+
+  .brand span {
+    font-size: 11px;
+  }
+
+  .panel {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .panel-head h2 {
+    font-size: 20px;
+  }
+
+  .form input {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 13px;
+    font-size: 14px;
+  }
+
+  .driver {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .bottom-nav {
+    padding: 10px 0;
+  }
+
+  .bottom-nav a {
+    font-size: 11px;
+  }
+}
+
+/* ===============================
+   NORMAL MOBILE (361px – 480px)
+   =============================== */
+@media (max-width: 480px) {
+
+  .container {
+    padding-top: 160px;
+  }
+
+  .panel {
+    max-width: 94%;
+  }
+
+  .panel-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .panel-icon i {
+    font-size: 24px;
+  }
+}
+
+/* ===============================
+   TABLET & LARGE MOBILE
+   =============================== */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .panel {
+    max-width: 460px;
+  }
+
+  .brand h1 {
+    font-size: 26px;
+  }
+
+  .panel-head h2 {
+    font-size: 24px;
+  }
+}
+
+/* ===============================
+   DESKTOP
+   =============================== */
+@media (min-width: 769px) {
+
+  .container {
+    padding-top: 140px;
+  }
+
+  .panel {
+    max-width: 440px;
+  }
+
+  .bottom-nav {
+    bottom: 20px;
+  }
+}
+
+
+
+/* POPUP TOAST */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: -300px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: white;
+  z-index: 9999;
+  transition: 0.4s;
+}
+
+.popup.show {
+  right: 20px;
+}
+
+.popup.success {
+  background: #00c853;
+}
+
+.popup.error {
+  background: #ff1744;
+}
+
+/* CONFIRM BOX */
+.confirm-box {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.confirm-content {
+  background: #222;
+  padding: 25px;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+  color: white;
+}
+
+.confirm-content {
+  background: #1f1f1f;
+  padding: 28px;
+  border-radius: 18px;
+  width: 340px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+}
+
+.confirm-content h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.confirm-content p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+
+.confirm-actions button {
+  border: none;
+  padding: 8px 12px;
+  gap: 12px;   /* ✅ Gap */
+  cursor: pointer;
+}
+
+
+.btn-cancel {
+  background: gray;
+  color: white;
+}
+
+.btn-ok {
+  background: red;
+  color: white;
+}

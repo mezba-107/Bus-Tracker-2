@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bus Schedule | Southern University Transport</title>
+    <link rel="stylesheet" href="bus-schedule.css" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="/image/logo.jpg" />
+  </head>
+  <body>
+    <div class="bg"></div>
+
+    <div class="content">
+      <div class="header">
+        <img src="/image/logo.jpg" class="logo" />
+        <h1>Bus Schedule</h1>
+        <p>Southern University Transport System</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Bus No</th>
+              <th>Route</th>
+              <th>Schedule</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- BUS 01 (CLICKABLE) -->
+            <tr class="bus-row clickable" data-target="bus01">
+              <td><i class="fa-solid fa-bus"></i> Bus 01</td>
+              <td>Campus ↔ Halishahar</td>
+              <td><span class="view-text">Tap to view</span></td>
+            </tr>
+
+            <!-- BUS 01 DETAILS (HIDDEN BY DEFAULT) -->
+            <tr class="bus01-details hidden" id="bus01">
+              <td colspan="3">
+                <div class="bus-card">
+                  <h2>🚌 Bus 01 – Detailed Schedule</h2>
+
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Trip</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus</td>
+                        <td>Halishahar</td>
+                        <td>7:20 AM → 7:40 AM</td>
+                      </tr>
+                      <tr>
+                        <td>Return</td>
+                        <td>Halishahar</td>
+                        <td>Campus</td>
+                        <td>7:45 AM → 8:30 AM</td>
+                      </tr>
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus</td>
+                        <td>Agrabad</td>
+                        <td>8:30 AM → 9:00 AM</td>
+                      </tr>
+                      <tr>
+                        <td>Return</td>
+                        <td>Agrabad</td>
+                        <td>Campus</td>
+                        <td>9:00 AM → 9:35 AM</td>
+                      </tr>
+                      <tr>
+                        <td>Noon</td>
+                        <td>Campus</td>
+                        <td>Halishahar</td>
+                        <td>1:45 PM → 2:40 PM</td>
+                      </tr>
+                      <tr>
+                        <td>Return</td>
+                        <td>Halishahar</td>
+                        <td>Campus</td>
+                        <td>2:40 PM → 3:30 PM</td>
+                      </tr>
+                      <tr>
+                        <td>Evening</td>
+                        <td>Campus</td>
+                        <td>2 No Gate</td>
+                        <td>4:00 PM → 4:40 PM</td>
+                      </tr>
+                      <tr>
+                        <td>Night</td>
+                        <td>Campus</td>
+                        <td>Halishahar</td>
+                        <td>5:20 PM → 6:00 PM</td>
+                      </tr>
+                      <tr>
+                        <td>Return</td>
+                        <td>Halishahar</td>
+                        <td>Campus</td>
+                        <td>6:00 PM → 7:20 PM</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+
+            <!-- BUS 02 (CLICKABLE) -->
+            <tr class="bus-row clickable" data-target="bus02">
+              <td><i class="fa-solid fa-bus"></i> Bus 02</td>
+              <td>Campus ↔ Bhatiari / Sagorika</td>
+              <td><span class="view-text">Tap to view</span></td>
+            </tr>
+
+            <tr class="bus01-details hidden" id="bus02">
+              <td colspan="3">
+                <div class="bus-card">
+                  <h2>🚌 Bus 02 – Detailed Schedule</h2>
+
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Trip</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus</td>
+                        <td>Bhatiari Moor</td>
+                        <td>7:30 AM → 8:00 AM</td>
+                      </tr>
+                      <tr>
+                        <td>Return</td>
+                        <td>Bhatiari Moor</td>
+                        <td>Campus</td>
+                        <td>8:10 AM → 8:20 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus</td>
+                        <td>Bhatiari Moor</td>
+                        <td>8:30 AM → 9:00 AM</td>
+                      </tr>
+                      <tr>
+                        <td>Return</td>
+                        <td>Bhatiari Moor</td>
+                        <td>Campus</td>
+                        <td>9:10 AM → 9:20 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Mid-Morning</td>
+                        <td>Campus</td>
+                        <td>Sagorika</td>
+                        <td>9:20 AM → 9:40 AM</td>
+                      </tr>
+                      <tr>
+                        <td>Return</td>
+                        <td>Sagorika</td>
+                        <td>Campus</td>
+                        <td>9:40 AM → 10:10 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Noon</td>
+                        <td>Campus</td>
+                        <td>Alongkar Moor</td>
+                        <td>10:10 AM → 10:40 AM</td>
+                      </tr>
+                      <tr>
+                        <td>Return</td>
+                        <td>Alongkar Moor</td>
+                        <td>Campus</td>
+                        <td>10:50 AM → 11:10 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Afternoon</td>
+                        <td>Campus</td>
+                        <td>Baizid Link Rd</td>
+                        <td>12:30 PM → 12:40 PM</td>
+                      </tr>
+                      <tr>
+                        <td>Return</td>
+                        <td>Baizid Link Rd</td>
+                        <td>Campus</td>
+                        <td>12:40 PM → 12:50 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Evening</td>
+                        <td>Campus</td>
+                        <td>Bhatiari Moor</td>
+                        <td>5:20 PM → 6:00 PM</td>
+                      </tr>
+                      <tr>
+                        <td>Return</td>
+                        <td>Bhatiari Moor</td>
+                        <td>Campus</td>
+                        <td>6:30 PM → 6:45 PM</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+
+            <!-- BUS 03 -->
+            <tr class="bus-row clickable" data-target="bus03">
+              <td><i class="fa-solid fa-bus"></i> Bus 03</td>
+              <td>Campus ↔ Chawkbazar / Olikha Moor</td>
+              <td><span class="view-text">Tap to view</span></td>
+            </tr>
+
+            <tr class="bus01-details hidden" id="bus03">
+              <td colspan="3">
+                <div class="bus-card">
+                  <h2>🚌 Bus 03 – Detailed Schedule</h2>
+
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Trip</th>
+                        <th>Route</th>
+                        <th>Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus → Chawkbazar (Olikha Moor)</td>
+                        <td>7:30 AM → 8:40 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus → Chawkbazar (Olikha Moor)</td>
+                        <td>8:40 AM → 10:00 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Late Morning</td>
+                        <td>Campus → Chawkbazar (Olikha Moor)</td>
+                        <td>10:00 AM → 11:00 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Noon</td>
+                        <td>Campus → Chawkbazar (Olikha Moor)</td>
+                        <td>11:00 AM → 12:00 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Afternoon</td>
+                        <td>Campus → Chawkbazar (Olikha Moor)</td>
+                        <td>1:40 PM → 2:50 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Evening</td>
+                        <td>Campus → U-Turn Mayor Goli</td>
+                        <td>4:40 PM → 5:20 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Night</td>
+                        <td>Campus → U-Turn Mayor Goli</td>
+                        <td>6:30 PM → 9:50 PM</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+
+            <!-- BUS 04 -->
+            <tr class="bus-row clickable" data-target="bus04">
+              <td><i class="fa-solid fa-bus"></i> Bus 04</td>
+              <td>Campus ↔ Natun Bridge / Kotowali</td>
+              <td><span class="view-text">Tap to view</span></td>
+            </tr>
+
+            <tr class="bus01-details hidden" id="bus04">
+              <td colspan="3">
+                <div class="bus-card">
+                  <h2>🚌 Bus 04 – Detailed Schedule</h2>
+
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Trip</th>
+                        <th>Route</th>
+                        <th>Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus → Natun Bridge (Outer Link)</td>
+                        <td>7:00 AM → 7:30 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Morning</td>
+                        <td>Natun Bridge → Campus (via Kotowali)</td>
+                        <td>7:30 AM → 8:30 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus → Kotowali Moor</td>
+                        <td>8:30 AM → 9:00 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Morning</td>
+                        <td>Kotowali → Campus</td>
+                        <td>9:00 AM → 10:00 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Mid-Day Shuttle</td>
+                        <td>Campus ↔ 2 No. Gate</td>
+                        <td>10:00 AM → 1:20 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Afternoon</td>
+                        <td>Campus → Natun Bridge</td>
+                        <td>1:45 PM → 3:00 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Afternoon</td>
+                        <td>Natun Bridge → Campus</td>
+                        <td>3:00 PM → 4:00 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Evening</td>
+                        <td>Campus → Natun Bridge</td>
+                        <td>5:20 PM → 6:00 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Evening</td>
+                        <td>Natun Bridge → Campus</td>
+                        <td>6:00 PM → 7:00 PM</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+
+            <!-- BUS 05 -->
+            <tr class="bus-row clickable" data-target="bus05">
+              <td><i class="fa-solid fa-bus"></i> Bus 05</td>
+              <td>Campus ↔ Hathazari / Oxygen</td>
+              <td><span class="view-text">Tap to view</span></td>
+            </tr>
+
+            <tr class="bus01-details hidden" id="bus05">
+              <td colspan="3">
+                <div class="bus-card">
+                  <h2>🚌 Bus 05 – Detailed Schedule</h2>
+
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Trip</th>
+                        <th>Route</th>
+                        <th>Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus → Hathazari College Gate</td>
+                        <td>7:00 AM → 7:30 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Morning</td>
+                        <td>Hathazari College Gate → Campus</td>
+                        <td>7:40 AM → 8:20 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus → Fateyabad</td>
+                        <td>9:00 AM → 9:30 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Mid-Morning</td>
+                        <td>Fateyabad → Campus → Oxygen</td>
+                        <td>9:30 AM → 10:00 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Late Morning</td>
+                        <td>Oxygen → Campus</td>
+                        <td>10:00 AM → 11:20 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Afternoon</td>
+                        <td>Campus → Hathazari Bus Stand</td>
+                        <td>1:45 PM → 2:30 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Afternoon</td>
+                        <td>Hathazari Bus Stand → Campus</td>
+                        <td>2:30 PM → 3:30 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Evening</td>
+                        <td>Campus → Hathazari Bus Stand</td>
+                        <td>5:20 PM → 6:30 PM</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+
+            <!-- BUS 06 -->
+            <tr class="bus-row clickable" data-target="bus06">
+              <td><i class="fa-solid fa-bus"></i> Bus 06</td>
+              <td>Campus ↔ Moulavibazar / Chandgaon</td>
+              <td><span class="view-text">Tap to view</span></td>
+            </tr>
+
+            <tr class="bus01-details hidden" id="bus06">
+              <td colspan="3">
+                <div class="bus-card">
+                  <h2>🚌 Bus 06 – Detailed Schedule</h2>
+
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Trip</th>
+                        <th>Route</th>
+                        <th>Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus → Moulavibazar</td>
+                        <td>7:00 AM → 7:25 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Morning Return</td>
+                        <td>Moulavibazar → Campus</td>
+                        <td>7:30 AM → 8:20 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Morning</td>
+                        <td>Campus → Chandgaon (Hazera Tazu College)</td>
+                        <td>8:20 AM → 9:00 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Return</td>
+                        <td>Chandgaon → Campus</td>
+                        <td>9:00 AM → 9:30 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Late Morning</td>
+                        <td>Campus → Bahaddarhut Moor</td>
+                        <td>9:40 AM → 10:20 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Return</td>
+                        <td>Bahaddarhut → Campus</td>
+                        <td>10:20 AM → 10:40 AM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Afternoon</td>
+                        <td>Campus → Moulavibazar</td>
+                        <td>1:45 PM → 2:30 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Afternoon Return</td>
+                        <td>Moulavibazar → Campus</td>
+                        <td>2:30 PM → 3:00 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Evening</td>
+                        <td>Campus → Moulavibazar</td>
+                        <td>5:20 PM → 6:30 PM</td>
+                      </tr>
+
+                      <tr>
+                        <td>Evening Return</td>
+                        <td>Moulavibazar → Campus</td>
+                        <td>6:30 PM → 7:20 PM</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bottom Navbar -->
+    <div class="bottom-nav">
+      <a href="/index.html"
+        ><i class="fa-solid fa-house"></i><span>Home</span></a
+      >
+      <a href="/frontend/track/track.html"
+        ><i class="fa-solid fa-location-dot"></i><span>Track</span></a
+      >
+      <a href="/frontend/schedule/bus-schedule.html" class="active">
+        <i class="fa-solid fa-calendar"></i><span>Schedule</span>
+      </a>
+    </div>
+
+    <!-- TOGGLE SCRIPT -->
+    <script>
+      document.querySelectorAll(".bus-row").forEach((row) => {
+        row.addEventListener("click", () => {
+          const targetId = row.getAttribute("data-target");
+          const details = document.getElementById(targetId);
+          if (details) details.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

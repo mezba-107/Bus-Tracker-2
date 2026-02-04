@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Profile | SU Transport</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="/image/logo.jpg">
+  <link rel="stylesheet" href="admin-profile.css">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="brand-header">
+  <img src="/image/logo.jpg">
+  <div class="brand-text">
+    <h1>Southern University</h1>
+    <p>Admin Profile</p>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="card">
+
+    <div class="profile-icon">
+      <i class="fa-solid fa-user-shield"></i>
+    </div>
+
+    <h2>Admin Profile</h2>
+    <span class="sub">System Administrator</span>
+
+<!-- INFO -->
+<div class="info-grid">
+
+  <div class="info-item">
+    <span>Name</span>
+    <input id="adminName" placeholder="Your name">
+  </div>
+
+  <div class="info-item">
+    <span>Username</span>
+    <input id="adminUsername" placeholder="Username">
+  </div>
+
+  <div class="info-item">
+  <span>Mobile</span>
+  <input id="adminMobile" placeholder="Enter mobile number">
+</div>
+
+
+  <div class="info-item">
+  <span>Email</span>
+  <input id="adminEmail" readonly>
+</div>
+
+  <div class="info-item">
+    <span>Role</span>
+    <p id="adminRole"></p>
+  </div>
+
+</div>
+
+
+
+    <!-- ACTION BUTTONS -->
+
+    <button class="save-btn" onclick="updateProfile()">
+  <i class="fa-solid fa-floppy-disk"></i> Save Profile
+</button>
+
+
+    <button class="reset-btn" onclick="openResetModal()">
+      <i class="fa-solid fa-key"></i> Change Password
+    </button>
+
+    <button class="logout-btn" onclick="logoutAdmin()">
+      <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </button>
+
+  </div>
+</div>
+
+<!-- ===== RESET PASSWORD MODAL ===== -->
+<div class="modal" id="resetModal">
+  <div class="modal-card">
+    <h3>Reset Password</h3>
+
+    <input type="password" id="oldPass" placeholder="Current Password">
+    <input type="password" id="newPass" placeholder="New Password">
+    <input type="password" id="confirmPass" placeholder="Confirm Password">
+
+    <button class="reset-btn" onclick="resetPassword()">
+      <i class="fa-solid fa-check"></i> Reset
+    </button>
+
+    <button class="cancel-btn" onclick="closeResetModal()">Cancel</button>
+  </div>
+</div>
+
+<!-- ===== BOTTOM NAV ===== -->
+<nav class="bottom-nav">
+  <a href="/frontend/Admin/admin-dashboard.html" class="nav-item">
+    <i class="fa-solid fa-chart-line"></i>
+    <span>Dashboard</span>
+  </a>
+
+  <a href="/frontend/Admin/admin-driver-create.html" class="nav-item">
+    <i class="fa-solid fa-user-plus"></i>
+    <span>Create</span>
+  </a>
+
+  <a href="/frontend/Admin/admin-profile.html" class="nav-item active">
+    <i class="fa-solid fa-user-shield"></i>
+    <span>Profile</span>
+  </a>
+</nav>
+
+<!-- ===== CUSTOM POPUP ===== -->
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <p id="popupMsg"></p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+
+<script src="admin-profile.js"></script>
+</body>
+</html>

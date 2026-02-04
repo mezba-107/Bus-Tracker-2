@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard | SU Transport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/image/logo.jpg" />
+    <link rel="stylesheet" href="/frontend/Admin/admin-dashboard.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ===== BRAND HEADER ===== -->
+    <header class="brand-header">
+      <img src="/image/logo.jpg" />
+      <div class="brand-text">
+        <h1>Southern University</h1>
+        <p>Transport Admin Dashboard</p>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <div class="dashboard">
+        <h2>Live Bus Status</h2>
+        <p class="sub">Real-time Driver & Bus Monitoring (Demo)</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Bus No</th>
+                <th>Driver Name</th>
+                <th>Driver ID</th>
+                <th>Status</th>
+                <th>Last Update</th>
+              </tr>
+            </thead>
+            <tbody id="busTable">
+              <!-- JS will insert rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BUS HISTORY MODAL ===== -->
+    <div id="historyModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h3 id="modalTitle">Bus History</h3>
+        <p class="modal-sub">Daily Activity Log</p>
+
+        <div id="historyList" class="history-list">
+          <!-- JS inject -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BOTTOM NAV ===== -->
+    <nav class="bottom-nav">
+      <a href="/frontend/Admin/admin-dashboard.html" class="nav-item active">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="/frontend/Admin/admin-driver-create.html" class="nav-item">
+        <i class="fa-solid fa-user-plus"></i>
+        <span>Create</span>
+      </a>
+
+      <a href="/frontend/Admin/admin-profile.html" class="nav-item">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Profile</span>
+      </a>
+    </nav>
+
+    <script src="/frontend/Admin/admin-dashboard.js"></script>
+  </body>
+</html>

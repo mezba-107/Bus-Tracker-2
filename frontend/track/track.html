@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Track Bus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="track.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="/image/logo.jpg" />
+  </head>
+
+  <body>
+    <div class="bg"></div>
+
+    <div class="content">
+      <img src="/image/logo.jpg" class="logo" />
+      <h1>Track Bus</h1>
+      <p class="subtitle">Live Bus Location</p>
+
+      <div class="bus-select">
+        <i class="fa-solid fa-bus"></i>
+        <select id="busSelect">
+          <option value="" selected disabled>Select Bus</option>
+          <option value="bus01">Bus 01</option>
+          <option value="bus02">Bus 02</option>
+          <option value="bus03">Bus 03</option>
+          <option value="bus04">Bus 04</option>
+          <option value="bus05">Bus 05</option>
+          <option value="bus06">Bus 06</option>
+        </select>
+      </div>
+
+      <div class="map-card">
+        <div class="map-wrapper">
+          <div id="map"></div>
+          <button id="myLocationBtn">
+            <i class="fa-solid fa-location-crosshairs"></i>
+          </button>
+        </div>
+
+        <div class="bus-info">
+          <span>Bus: <b id="busNo">BUS01</b></span>
+          <span>Status: <span id="status" class="live">Live</span></span>
+          <span>Distance: <span id="distance" class="live">--</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PART ST HERE -->
+
+    <div class="bottom-nav">
+      <a href="/index.html"
+        ><i class="fa-solid fa-house"></i><span>Home</span></a
+      >
+
+      <a class="active"
+        ><i class="fa-solid fa-location-dot"></i><span>Track</span></a
+      >
+
+      <a href="/frontend/schedule/bus-schedule.html"
+        ><i class="fa-solid fa-calendar"></i><span>Schedule</span></a
+      >
+    </div>
+
+    <!-- NAV PART END HERE -->
+
+    <!-- JS links here -->
+
+    <script src="https://unpkg.com/leaflet-polylinedecorator@1.7.0/dist/leaflet.polylineDecorator.min.js"></script>
+
+    <script src="http://localhost:5000/socket.io/socket.io.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="track.js"></script>
+  </body>
+</html>

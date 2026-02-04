@@ -1,0 +1,340 @@
+/* =====================
+   RESET & BASE
+   ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+
+
+/* =====================
+   BACKGROUND
+   ===================== */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url("/image/southern 1.jpg") center / cover no-repeat;
+  filter: blur(14px);
+  transform: scale(1.15);
+  z-index: -2;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* =====================
+   CONTENT WRAPPER
+   ===================== */
+.content {
+  min-height: 100vh;
+  padding: 70px 0 110px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+
+/* =====================
+   LOGO & TITLES
+   ===================== */
+.logo {
+  width: 80px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.subtitle {
+  opacity: 0.85;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+/* =====================
+   BUS SELECTOR
+   ===================== */
+.bus-select {
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.bus-select i {
+  font-size: 18px;
+}
+
+.bus-select select {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+.bus-select option {
+  color: black;
+}
+
+/* =====================
+   MAP CARD
+   ===================== */
+.map-card {
+  width: 94%;
+  max-width: 1000px;
+  background: rgba(255,255,255,0.16);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: 
+    0 25px 60px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+}
+
+
+#map {
+  width: 100%;
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* =====================
+   BUS INFO
+   ===================== */
+.bus-info {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.live {
+  color: #00ff9c;
+  font-weight: 600;
+}
+
+/* =====================
+   BOTTOM NAVBAR
+   ===================== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20,20,20,0.8);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 8px;
+  z-index: 10;
+}
+
+.bottom-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: 0.3s;
+}
+
+.bottom-nav a i {
+  font-size: 18px;
+}
+
+.bottom-nav a.active {
+  opacity: 1;
+  color: #00ff9c;
+}
+
+
+.user-circle {
+  width: 34px;
+  height: 34px;
+  background: #00ff9c;
+  color: #000;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0,255,156,0.8);
+  border: 2px solid white;
+  font-size: 14px;
+}
+
+
+.map-wrapper {
+  position: relative;
+}
+
+#myLocationBtn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  color: #1e88e5;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 500;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+}
+
+#myLocationBtn:hover {
+  background: #e3f2fd;
+}
+
+#myLocationBtn:active {
+  transform: scale(0.92);
+}
+
+
+@media (max-width: 600px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .content {
+    min-height: calc(100svh - 70px); /* 🔥 bottom nav consider */
+    padding: 40px 0 100px;
+    justify-content: center;        /* 🔥 vertical center */
+  }
+
+  .logo {
+    width: 62px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .bus-select {
+    padding: 8px 14px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+  }
+
+  .map-card {
+    padding: 12px;
+    border-radius: 18px;
+    margin-top: 8px;
+  }
+
+  #map {
+    height: 300px;
+  }
+
+  .bus-info {
+    font-size: 12.5px;
+    gap: 6px;
+  }
+
+  #myLocationBtn {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+    bottom: 12px;
+    right: 12px;
+  }
+}
+
+/* =====================
+   TABLET (601px – 1024px)
+===================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  #map {
+    height: 300px;
+  }
+
+  .map-card {
+    width: 96%;
+    padding: 14px;
+    margin-top: 14px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+}
+
+/* =====================
+   LARGE SCREEN (≥1200px)
+===================== */
+@media (min-width: 1200px) {
+
+  #map {
+    height: 520px;
+  }
+
+  .map-card {
+    max-width: 1100px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+}
+
+/* Remove white box / shadow around custom bus icon */
+.leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.bus-icon {
+  background: transparent !important;
+  border: none !important;
+}
