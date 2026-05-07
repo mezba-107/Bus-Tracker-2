@@ -1,86 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Admin | Driver Management</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin | Driver Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" href="/image/logo.jpg">
-  <link rel="stylesheet" href="/frontend/Admin/admin-driver-create.css">
+    <link rel="icon" href="/image/logo.jpg" />
+    <link rel="stylesheet" href="/frontend/Admin/admin-driver-create.css" />
 
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
 
-<body>
+  <body>
+    <header class="brand">
+      <img src="/image/logo.jpg" />
+      <div>
+        <h1>Southern University</h1>
+        <span>Transport Admin Panel</span>
+      </div>
+    </header>
 
-<header class="brand">
-  <img src="/image/logo.jpg">
-  <div>
-    <h1>Southern University</h1>
-    <span>Transport Admin Panel</span>
-  </div>
-</header>
+    <main class="container">
+      <section class="panel" id="panel">
+        <div id="createView">
+          <div class="panel-head">
+            <div class="panel-icon">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h2>Driver Management</h2>
+            <p>Create or manage driver login accounts</p>
+          </div>
 
-<main class="container">
+          <form class="form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <input type="text" id="driverName" required />
+              <label>Driver Full Name</label>
+            </div>
 
-  <section class="panel" id="panel">
+            <div class="form-group">
+              <input type="text" id="driverId" required />
+              <label>Driver ID</label>
+            </div>
 
-    <!-- CREATE DRIVER -->
-    <div id="createView">
+            <div class="form-group">
+              <input type="password" id="password" required />
+              <label>Password</label>
+            </div>
 
-      <div class="panel-head">
-        <div class="panel-icon">
-          <i class="fa-solid fa-users-gear"></i>
+            <button type="submit">
+              <i class="fa-solid fa-plus"></i>
+              Create Driver Account
+            </button>
+          </form>
+
+          <div class="divider"></div>
+
+          <div class="list">
+            <h3>Existing Drivers</h3>
+            <div id="driverList"></div>
+          </div>
         </div>
-        <h2>Driver Management</h2>
-        <p>Create or manage driver login accounts</p>
-      </div>
+      </section>
+    </main>
 
-      <div class="form">
-        <label>Driver Full Name</label>
-        <input type="text" id="driverName" placeholder="Driver Name">
+    <nav class="bottom-nav">
+      <a href="/frontend/Admin/admin-dashboard.html">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Dashboard</span>
+      </a>
+      <a class="active">
+        <i class="fa-solid fa-user-plus"></i>
+        <span>Create</span>
+      </a>
+      <a href="/frontend/Admin/admin-profile.html">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Profile</span>
+      </a>
+    </nav>
 
-        <label>Driver ID</label>
-        <input type="text" id="driverId" placeholder="Driver ID">
-
-        <label>Password</label>
-        <input type="password" id="password" placeholder="Set password">
-
-        <button onclick="createDriver()">
-          <i class="fa-solid fa-plus"></i>
-          Create Driver Account
-        </button>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="list">
-        <h3>Existing Drivers</h3>
-        <div id="driverList"></div>
-      </div>
-
-    </div>
-
-  </section>
-
-</main>
-
-<nav class="bottom-nav">
-  <a href="/frontend/Admin/admin-dashboard.html">
-    <i class="fa-solid fa-chart-line"></i>
-    <span>Dashboard</span>
-  </a>
-  <a class="active">
-    <i class="fa-solid fa-user-plus"></i>
-    <span>Create</span>
-  </a>
-  <a href="/frontend/Admin/admin-profile.html">
-    <i class="fa-solid fa-user-shield"></i>
-    <span>Profile</span>
-  </a>
-</nav>
-
-<script src="/frontend/Admin/admin-driver-create.js"></script>
-</body>
+    <script src="/frontend/Admin/admin-driver-create.js"></script>
+  </body>
 </html>

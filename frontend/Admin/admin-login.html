@@ -1,61 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Admin Login | SU Transport</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Login | SU Transport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" href="/image/logo.jpg">
-  <link rel="stylesheet" href="/frontend/Admin/admin-login.css">
+    <link rel="icon" href="/image/logo.jpg" />
+    <link rel="stylesheet" href="/frontend/Admin/admin-login.css" />
 
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="brand-header">
+      <img src="/image/logo.jpg" />
+      <div class="brand-text">
+        <h1>Southern University</h1>
+        <p>Transport Admin Panel</p>
+      </div>
+    </header>
 
-<!-- ===== BRAND HEADER ===== -->
-<header class="brand-header">
-  <img src="/image/logo.jpg">
-  <div class="brand-text">
-    <h1>Southern University</h1>
-    <p>Transport Admin Panel</p>
-  </div>
-</header>
+    <div class="wrapper">
+      <div class="card">
+        <div class="profile-icon">
+          <i class="fa-solid fa-user-shield"></i>
+        </div>
 
-<div class="wrapper">
-  <div class="card">
+        <h2>Admin Login</h2>
+        <span class="sub">Authorized Access Only</span>
 
-    <div class="icon-circle">
-      <i class="fa-solid fa-user-shield"></i>
+        <form onsubmit="handleLogin(event)">
+          <div class="info-item">
+            <input type="text" id="username" required />
+            <label>Username / Email</label>
+          </div>
+
+          <div class="info-item">
+            <input type="password" id="password" required />
+            <label>Password</label>
+          </div>
+
+          <button class="save-btn">
+            <i class="fa-solid fa-arrow-right"></i> Login
+          </button>
+        </form>
+
+        <p class="note">Only system administrator can access</p>
+      </div>
     </div>
 
-    <h2>Admin Login</h2>
-    <span class="sub">Authorized Access Only</span>
+    <!-- POPUP -->
+    <div id="popup" class="popup">
+      <div class="popup-box">
+        <p id="popupMsg"></p>
+        <button onclick="closePopup()">OK</button>
+      </div>
+    </div>
 
-    <label><i class="fa-solid fa-user"></i> Admin Username</label>
-    <input type="text" id="username" placeholder="Enter admin username or Email ">
-
-    <label><i class="fa-solid fa-lock"></i> Password</label>
-    <input type="password" id="password" placeholder="Enter password">
-
-    <button onclick="adminLogin()">
-      <i class="fa-solid fa-arrow-right"></i> Login
-    </button>
-
-    <p class="note">Only system administrator can access this panel</p>
-
-  </div>
-</div>
-
-<!-- ===== CUSTOM POPUP ===== -->
-<div id="popup" class="popup">
-  <div class="popup-box">
-    <p id="popupMsg"></p>
-    <button onclick="closePopup()">OK</button>
-  </div>
-</div>
-
-
-<script src="/frontend/Admin/admin-login.js"></script>
-</body>
+    <script src="/frontend/Admin/admin-login.js"></script>
+  </body>
 </html>

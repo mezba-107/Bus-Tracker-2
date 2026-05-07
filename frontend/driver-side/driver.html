@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Driver Panel | SU Smart Transport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/image/logo.jpg" />
+    <link rel="stylesheet" href="/frontend/driver-side/driver.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ===== HEADER BRAND ===== -->
+    <header class="brand-header">
+      <img src="/image/logo.jpg" alt="SU Logo" />
+      <div class="brand-text">
+        <h1>Southern University</h1>
+        <p>Smart Transport System</p>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <div class="card">
+        <!-- DRIVER INFO -->
+        <div class="driver-info" onclick="openProfile()">
+          <i class="fa-solid fa-id-card"></i>
+          <div>
+            <h3 id="driverName">Driver: Rahim Ahmed</h3>
+            <span id="driverId">ID: DRV-102</span>
+          </div>
+        </div>
+
+        <!-- 🔔 NOTICE ICON -->
+        <div class="notice-icon" onclick="openNotice()">
+          <i class="fa-solid fa-bell"></i>
+          <div id="noticeBadge" class="notice-badge">0</div>
+        </div>
+
+        <div class="icon-circle">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+
+        <h2>Driver Panel</h2>
+        <span class="sub">Live Bus Location Sender</span>
+
+        <label> <i class="fa-solid fa-route"></i> Select Bus </label>
+        <select id="busNo">
+          <option value="bus01">Bus 01</option>
+          <option value="bus02">Bus 02</option>
+          <option value="bus03">Bus 03</option>
+          <option value="bus04">Bus 04</option>
+          <option value="bus05">Bus 05</option>
+          <option value="bus06">Bus 06</option>
+        </select>
+
+        <button id="startBtn" class="start">
+          <i class="fa-solid fa-play"></i> Start Sharing
+        </button>
+
+        <button id="stopBtn" class="stop" disabled>
+          <i class="fa-solid fa-stop"></i> Stop Sharing
+        </button>
+
+        <button type="button" class="logout-btn" id="logoutBtn">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+
+        <div class="status-box">
+          <span>Status</span>
+          <span id="status" class="status-badge offline">Offline</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== DRIVER PROFILE MODAL ===== -->
+    <div class="modal" id="profileModal">
+      <div class="modal-content">
+        <div class="modal-head">
+          <h3>Driver Profile</h3>
+          <span class="close" onclick="closeProfile()">×</span>
+        </div>
+
+        <div class="modal-body">
+          <div class="row">
+            <span>Name</span>
+            <strong id="mName">Rahim Ahmed</strong>
+          </div>
+
+          <div class="row">
+            <span>Driver ID</span>
+            <strong id="mId">DRV-102</strong>
+          </div>
+
+          <div class="row">
+            <span>Mobile</span>
+            <strong id="mMobile">017xxxxxxxx</strong>
+          </div>
+
+          <div class="row">
+            <span>Address</span>
+            <strong id="mAddress">Chattogram, Bangladesh</strong>
+          </div>
+        </div>
+
+        <button class="modal-btn" onclick="closeProfile()">Close</button>
+      </div>
+    </div>
+
+    <!-- 🔴 NOTICE MODAL -->
+    <div class="modal" id="noticeModal">
+      <div class="modal-content notice-modal">
+        <div class="modal-head">
+          <h3>📢 Driver Notices</h3>
+        </div>
+
+        <div id="noticeList" class="modal-body notice-body">
+          <p class="empty">No notices yet</p>
+        </div>
+
+        <button class="modal-btn" onclick="closeNotice()">Close</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="/frontend/driver-side/driver.js"></script>
+  </body>
+</html>

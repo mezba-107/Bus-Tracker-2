@@ -1,3 +1,9 @@
 {
+<<<<<<< HEAD
     "editor.guides.highlightActiveIndentation": false
 }
+=======
+  "postman.settings.dotenv-detection-notification-visibility": false,
+  "liveServer.settings.port": 5502
+}
+>>>>>>> 683ad22 (what you changed)

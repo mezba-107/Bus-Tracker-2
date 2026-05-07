@@ -10,37 +10,10 @@ function showPopup(message) {
   document.querySelector(".modal-card")?.classList.add("blur");
 }
 
-
 function closePopup() {
   document.getElementById("popup").style.display = "none";
   document.querySelector(".modal-card")?.classList.remove("blur");
 }
-
-// =====================
-// LOAD ADMIN PROFILE
-// =====================
-
-async function loadAdminProfile() {
-  try {
-    const res = await fetch("http://localhost:5000/api/admin/profile", {
-      headers: {
-        "Authorization": "Bearer " + token
-      }
-    });
-
-    const data = await res.json();
-
-    document.getElementById("adminName").value = data.name || "";
-    document.getElementById("adminUsername").value = data.username || "";
-    document.getElementById("adminMobile").value = data.mobile || "";
-    document.getElementById("adminEmail").value = data.email || "";
-    document.getElementById("adminRole").innerText = data.role;
-
-  } catch (err) {
-    showPopup("Failed to load profile");
-  }
-}
-
 
 // =====================
 // AUTH CHECK
@@ -52,6 +25,40 @@ if (!token) {
   window.location.href = "/frontend/Admin/admin-login.html";
 }
 
+// =====================
+// LOAD ADMIN PROFILE
+// =====================
+
+async function loadAdminProfile() {
+  try {
+    const res = await fetch("http://localhost:5000/api/admin/profile", {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+
+    const data = await res.json();
+
+    document.getElementById("adminName").value = data.name || "";
+    document.getElementById("adminUsername").value = data.username || "";
+    document.getElementById("adminMobile").value = data.mobile || "";
+    document.getElementById("adminEmail").value = data.email || "";
+    document.getElementById("adminRole").value = data.role || "";
+
+    // 🔥 FLOAT LABEL FIX AFTER LOAD
+    setTimeout(() => {
+      document.querySelectorAll(".info-item input").forEach((input) => {
+        if (input.value.trim() !== "") {
+          input.classList.add("filled");
+        } else {
+          input.classList.remove("filled");
+        }
+      });
+    }, 200);
+  } catch (err) {
+    showPopup("Failed to load profile");
+  }
+}
 
 // =====================
 // MODAL CONTROL
@@ -63,7 +70,6 @@ function openResetModal() {
 function closeResetModal() {
   document.getElementById("resetModal").style.display = "none";
 }
-
 
 // =====================
 // RESET PASSWORD
@@ -86,9 +92,9 @@ async function resetPassword() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer " + token
+        Authorization: "Bearer " + token,
       },
-      body: JSON.stringify({ oldPassword, newPassword })
+      body: JSON.stringify({ oldPassword, newPassword }),
     });
 
     const data = await res.json();
@@ -97,20 +103,17 @@ async function resetPassword() {
       return showPopup(data.message);
     }
 
-// ✅ SUCCESS
-showPopup("Password updated successfully");
+    // SUCCESS
+    showPopup("Password updated successfully");
 
-// ✅ clear inputs
-document.getElementById("oldPass").value = "";
-document.getElementById("newPass").value = "";
-document.getElementById("confirmPass").value = "";
+    // clear inputs
+    document.getElementById("oldPass").value = "";
+    document.getElementById("newPass").value = "";
+    document.getElementById("confirmPass").value = "";
 
-// ✅ popup OK চাপার পর modal বন্ধ হবে
-setTimeout(() => {
-  closeResetModal();
-}, 1000);
-
-
+    setTimeout(() => {
+      closeResetModal();
+    }, 1000);
   } catch (err) {
     showPopup("Server error");
     console.error(err);
@@ -120,7 +123,6 @@ setTimeout(() => {
 // =====================
 // UPDATE PROFILE
 // =====================
-
 
 async function updateProfile() {
   const name = document.getElementById("adminName").value.trim();
@@ -136,9 +138,9 @@ async function updateProfile() {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer " + token
+        Authorization: "Bearer " + token,
       },
-      body: JSON.stringify({ name, username, mobile })
+      body: JSON.stringify({ name, username, mobile }),
     });
 
     const data = await res.json();
@@ -146,12 +148,10 @@ async function updateProfile() {
     if (!res.ok) return showPopup(data.message);
 
     showPopup("Profile updated successfully");
-
   } catch (err) {
     showPopup("Server error");
   }
 }
-
 
 // =====================
 // LOGOUT
@@ -161,5 +161,38 @@ function logoutAdmin() {
   window.location.href = "/frontend/Admin/admin-login.html";
 }
 
+// =====================
+// RIPPLE EFFECT (NEW)
+// =====================
+document.querySelectorAll("button").forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    const circle = document.createElement("span");
+    circle.classList.add("ripple");
 
+    const rect = this.getBoundingClientRect();
+    circle.style.left = e.clientX - rect.left + "px";
+    circle.style.top = e.clientY - rect.top + "px";
+
+    this.appendChild(circle);
+
+    setTimeout(() => circle.remove(), 600);
+  });
+});
+
+// =====================
+// FLOAT LABEL LIVE FIX (🔥 MAIN FIX)
+// =====================
+document.querySelectorAll(".info-item input").forEach((input) => {
+  input.addEventListener("input", function () {
+    if (this.value.trim() !== "") {
+      this.classList.add("filled");
+    } else {
+      this.classList.remove("filled");
+    }
+  });
+});
+
+// =====================
+// INIT
+// =====================
 loadAdminProfile();
